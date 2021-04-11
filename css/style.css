@@ -5,16 +5,28 @@
 }
 
 body {
+  font-family: 'Oswald', sans-serif;
   font-size: 18px;
   line-height: 27px;
   font-weight: 300;
   color: #2c2b2b;
 }
-a{
+
+a {
+  /* поправляем ссылки */
   text-decoration: none;
   color: inherit;
   display: inline-block;
 }
+
+.container {
+  /* не забыть добавить 20px от padding'a (box-sizing: border-box) */
+  max-width: 1200px;
+  margin: 0 auto;
+  /* для мобильных устройств, чтоб контент не прилимал */
+  padding: 0 10px;
+}
+
 .header {
   background-image: url(../images/header-bg.jpg);
   background-repeat: no-repeat;
@@ -22,4 +34,152 @@ a{
   background-position: top center;
   min-height: 700px;
   color: #fff;
+}
+
+.header__top {
+  padding: 47px 0 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 54px;
+}
+
+.header__content {
+  /* также можно было padding и header__title задать   */
+  padding-top: 60px;
+  /* чтобы спозиционировать машину в ".header__images" */
+  position: relative;
+}
+
+.header__title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 107px;
+}
+
+.header__subtitle {
+  font-size: 36px;
+  line-height: 54px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.header__text {
+  margin-bottom: 30px;
+  max-width: 800px;
+}
+
+.button {
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  padding: 14px 54px 15px;
+  background-color: #5A0D67;
+  /* не пишем отступ margin, т.к. это блок по БЭМу, который будет ещё раз использоваться снизу, поэтому отступим лучше от иконок соц. сетей */
+  /* свойство задаётся именно здесь, а не в :hover */
+  border: 1px solid transparent;
+  transition: all .5s;
+}
+
+.button:hover {
+  color: #5A0D67;
+  background-color: #fff;
+  border: 1px solid #5A0D67;
+}
+
+.header__social {
+  padding: 70px 0 20px 65px;
+  align-items: center;
+  display: flex;
+
+}
+
+.header__social-link {
+  margin-right: 10px;
+}
+
+.header__images {
+  position: absolute;
+  right: 0;
+  bottom: -255px;
+}
+
+.services {
+  padding-top: 350px;
+}
+
+.title {
+  color: #21062A;
+  font-size: 36px;
+  line-height: 54px;
+  font-weight: 400;
+  text-transform: uppercase;
+  /* т.к. в каждом встречающемся случае будет margin-bottom: 50px, то мы можем себе тут позволить написать  */
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background-color: #21062A;
+  top: 22px;
+  margin-left: 22px;
+}
+
+.services__inner {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.services__content {
+  width: 505px;
+  margin-right: 96px;
+}
+
+.services__content-title {
+  color: #5A0D67;
+  /* хоть и дублируется со стилями в body, но требуется записать, т.к. это тэг h6, если кто-то будет менять на h5 или что-то другое, то стили остануться такими же */
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.services__content-textbox {
+  margin-bottom: 57px;
+}
+
+.services__content-text {
+  margin-bottom: 12px;
+}
+.button--decor{
+  margin-top: -7px;
+  color: #fff;
+  position: relative;
+}
+.button--decor::after {
+  content: 'ЖМИ';
+  color: #C4C4C4;
+  position: absolute;
+  margin-left: 143px;
+}
+.button--decor::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 1px;
+  background-color: #C4C4C4;
+  /* пишем тут от right, чтобы при добавлении контента в кнопку линия не наезжала на слова, но это тут возможно т.к. это строчно-блочный элемент */
+  right: -78px;
+  top: 24px;
 }
