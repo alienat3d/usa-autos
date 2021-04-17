@@ -419,6 +419,9 @@ a {
   margin-top: 78px;
   cursor: pointer;
 }
+.contacts__button:hover {
+  border: none;
+}
 .footer{
   background-color: #21062a;
 }
