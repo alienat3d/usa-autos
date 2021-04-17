@@ -95,14 +95,16 @@ a {
 }
 
 .header__social {
-  padding: 70px 0 20px 65px;
-  align-items: center;
-  display: flex;
-
+  padding: 70px 0 20px 70px;
 }
 
-.header__social-link {
-  margin-right: 10px;
+.social {
+  align-items: center;
+  display: flex;
+}
+
+.social__link {
+  margin: 0 5px;
 }
 
 .header__images {
@@ -218,6 +220,13 @@ a {
   transition: all .5s;
 }
 
+/* если вдруг будет больше 10 элементов, то будет считаться далее 010 и т.д. это недопустимо, поэтому добавляем строку с :nth-child(n + 10):
+
+:nth-child(An+B) - формула для :nth-child() */
+/* .services__item:nth-child(n + 10)::before{
+  content: counter(my-counter);
+} */
+
 .services__item:hover {
   border: 2px solid #5A0D67;
   width: 500px;
@@ -287,4 +296,136 @@ a {
 
 .carousel {
   margin-bottom: 100px;
+}
+
+.carousel__inner {
+  margin: 0 -7px;
+}
+
+.carousel__item {
+  margin: 0 7px;
+}
+
+.carousel__item-box {
+  border: 1px solid #C4C4C4;
+  padding: 6px 6px 16px 6px;
+  text-align: center;
+  transition: all .5s;
+}
+
+.carousel__item-box:hover {
+  color: #fff;
+  background-color: #5A0D67;
+  border-color: #5A0D67;
+}
+
+.carousel__item-img {
+  max-width: 100%;
+  margin-bottom: 23px;
+}
+
+.carousel__item-title {
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+/* если бы мы были абсолютно уверены, что это будет единственный слайдер, то ненужно было бы писать 1-ым родительский класс, но т.к. кто его знает, может позже что-то ещё будет, то пишем так */
+.carousel .slick-dots {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 102px;
+  letter-spacing: none;
+}
+
+.carousel .slick-dots button {
+  font-size: 0;
+  border: none;
+  margin: 0 10px;
+  width: 50px;
+  height: 1px;
+  background-color: #C4C4C4;
+  transition: all .5s;
+}
+
+.carousel .slick-active button {
+  background-color: #5A0D67;
+  height: 3px;
+  outline: none;
+}
+
+.contacts__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts__list {
+  list-style: none;
+}
+
+.contacts__item {
+  margin-bottom: 20px;
+}
+
+.contacts__item-title {
+  color: #5a0d67;
+}
+
+.contacts__form {
+  background-color: #21062A;
+  padding: 50px 75px 57px;
+  text-align: center;
+}
+
+.contacts__title {
+  color: #fff;
+  margin-bottom: 16px;
+  margin-left: 53px;
+  text-align: left;
+}
+
+.contacts__title::after {
+  background-color: #fff;
+}
+
+.contacts__input {
+  background-color: transparent;
+  width: 450px;
+  height: 75px;
+  border: 1px solid #FFF;
+  margin-bottom: 12px;
+  display: block;
+  font-size: 26px;
+  color: #fff;
+  /* не забывать про padding в form input! */
+  padding: 0 15px;
+  text-align: center;
+}
+
+/* input особенно placeholder'ам всегда прописывать значения текста, т.к. они его не наследуют из body! */
+.contacts__input::placeholder {
+  text-align: center;
+  color: #c4c4c4;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.contacts__button {
+  border: none;
+  font-size: 14px;
+  line-height: 21px;
+  color: #fff;
+  margin-top: 78px;
+  cursor: pointer;
+}
+.footer{
+  background-color: #21062a;
+}
+.footer__inner{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
 }
