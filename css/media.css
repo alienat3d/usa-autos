@@ -1,3 +1,7 @@
+@media (max-width: 1280px) {
+
+}
+
 @media (max-width: 1140px) {
   .services__item:hover {
     width: 450px;
@@ -128,14 +132,16 @@
   .social {
     justify-content: center;
   }
-  .footer__inner{
+
+  .footer__inner {
     flex-wrap: wrap;
     justify-content: center;
     height: auto;
     padding: 20px 0;
     text-align: center;
   }
-  .footer__social{
+
+  .footer__social {
     width: 100%;
     justify-content: center;
     margin: 25px 0;
